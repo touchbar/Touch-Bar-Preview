@@ -1,2 +1,2 @@
-# Touch-Bar-Preview
-Touch Bar Preview is a tiny app to display your designs on the MacBook Pro's Touch Bar.
+# Touch Bar Preview for macOS (WIP)
+This small app is still work in progress and will be released very soon.
