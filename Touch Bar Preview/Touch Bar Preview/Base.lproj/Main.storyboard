@@ -127,13 +127,22 @@
                                     <items>
                                         <menuItem title="Visit Product Website" id="qOp-4J-V2k">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openWebsite:" target="Voe-Tx-rLC" id="34C-yU-cH2"/>
+                                            </connections>
                                         </menuItem>
-                                        <menuItem title="Visit GitHub Website" id="6Sl-rX-aFb">
+                                        <menuItem title="Visit GitHub Website" tag="1" id="6Sl-rX-aFb">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openWebsite:" target="Voe-Tx-rLC" id="4ty-uC-Fv5"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Ktw-1w-Zel"/>
-                                        <menuItem title="Download Free UI Kit" id="sa0-eI-VVa">
+                                        <menuItem title="Download Free UI Kit" tag="10" id="sa0-eI-VVa">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openWebsite:" target="Voe-Tx-rLC" id="RML-bV-5aN"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="ljQ-yi-30q"/>
                                         <menuItem title="Touch Bar Preview Help" keyEquivalent="?" id="FKE-Sm-Kum">
@@ -227,19 +236,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If8-xj-QtX">
-                                        <rect key="frame" x="6" y="9" width="468" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image should be 60px x 1230px" usesSingleLineMode="YES" id="T8F-z9-hpv">
+                                        <rect key="frame" x="26" y="9" width="448" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image should be 2170x60px" usesSingleLineMode="YES" id="T8F-z9-hpv">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aOS-jj-qgo">
+                                        <rect key="frame" x="8" y="9" width="20" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="7C4-oz-oBo"/>
+                                            <constraint firstAttribute="height" constant="16" id="XDA-xy-UJ7"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" image="NSCaution" id="sHq-zP-Agd"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="If8-xj-QtX" secondAttribute="bottom" constant="9" id="0BL-L6-ZnH"/>
+                                    <constraint firstItem="If8-xj-QtX" firstAttribute="leading" secondItem="aOS-jj-qgo" secondAttribute="trailing" id="4bX-w9-eiN"/>
                                     <constraint firstAttribute="trailing" secondItem="If8-xj-QtX" secondAttribute="trailing" constant="8" id="69y-1w-BTW"/>
+                                    <constraint firstItem="aOS-jj-qgo" firstAttribute="top" secondItem="SjC-ae-fzs" secondAttribute="top" constant="7" id="Q4S-4C-Ejj"/>
                                     <constraint firstAttribute="height" constant="32" id="ULr-t8-iCM"/>
-                                    <constraint firstItem="If8-xj-QtX" firstAttribute="leading" secondItem="SjC-ae-fzs" secondAttribute="leading" constant="8" id="bRT-bb-NQQ"/>
+                                    <constraint firstItem="aOS-jj-qgo" firstAttribute="leading" secondItem="SjC-ae-fzs" secondAttribute="leading" constant="8" id="VSY-n9-sww"/>
+                                    <constraint firstAttribute="bottom" secondItem="aOS-jj-qgo" secondAttribute="bottom" constant="9" id="nTB-HY-NQg"/>
                                     <constraint firstItem="If8-xj-QtX" firstAttribute="top" secondItem="SjC-ae-fzs" secondAttribute="top" constant="9" id="npx-aZ-zoO"/>
                                 </constraints>
                             </customView>
@@ -259,6 +279,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBarAlertImageWidth" destination="7C4-oz-oBo" id="iSa-eg-Kfr"/>
+                        <outlet property="bottomBarInfoLable" destination="If8-xj-QtX" id="2hI-Hy-arD"/>
                         <outlet property="dropDestinationView" destination="Bhq-fs-c55" id="TNP-Ar-82b"/>
                         <outlet property="imagePreviewView" destination="b3k-xi-eRB" id="STQ-cU-HTl"/>
                     </connections>
@@ -270,5 +292,6 @@
     </scenes>
     <resources>
         <image name="Drop Image" width="104" height="104"/>
+        <image name="NSCaution" width="32" height="32"/>
     </resources>
 </document>

@@ -33,12 +33,19 @@ class ViewController: NSViewController {
     
     @IBOutlet var dropDestinationView: DropDestinationView!
     @IBOutlet weak var imagePreviewView: NSImageView!
+    
+    @IBOutlet weak var bottomBarInfoLable: NSTextField!
+    @IBOutlet weak var bottomBarAlertImageWidth: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         dropDestinationView.delegate = self
+        
+        // "hide" alert icon in bottom bar
+        bottomBarAlertImageWidth.constant = 0.0
     }
 
     override var representedObject: Any? {
@@ -55,10 +62,32 @@ extension ViewController: DropDestinationViewDelegate {
     func processImageURLs(_ urls: [URL]) {
         for (_,url) in urls.enumerated() {
             
+            // pass URL to Window Controller
+            let windowController = WindowController()
+            windowController.showImageInTouchBar(url)
+            
             // create the image from the content URL
             if let image = NSImage(contentsOf:url) {
                 
                 imagePreviewView.image = image
+                
+                // check if the image has the touch bar size (2170x60px)
+                // and inform the user
+                if image.size.width > 2170.0 || image.size.height > 60.0 {
+                    bottomBarInfoLable.stringValue = "Image is too big! Should be 2170x60px."
+                    bottomBarInfoLable.toolTip = "The image is \(image.size.width)x\(image.size.height)px."
+                    
+                    // show alert icon in bottom bar
+                    bottomBarAlertImageWidth.constant = 20.0
+                    
+                } else {
+                    bottomBarInfoLable.stringValue = "Image should be 2170x60px"
+                    bottomBarInfoLable.toolTip = nil
+                    
+                    // "hide" alert icon in bottom bar
+                    bottomBarAlertImageWidth.constant = 0.0
+                    
+                }
             }
         }
     }

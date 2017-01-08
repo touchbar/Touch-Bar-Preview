@@ -54,6 +54,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    // MARK: - Menu Links
+    
+    @IBAction func openWebsite(_ sender: NSMenuItem) {
+        var urlString = NSURL(string: "")
+        
+        switch sender.tag {
+        case 0:
+            urlString = NSURL(string: "https://touchbar.github.io")
+        case 1:
+            urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview")
+        case 10:
+            urlString = NSURL(string: "https://github.com/alexkaessner/macOS-UI-Kit")
+        default:
+            return
+        }
+        
+        NSWorkspace.shared().open(urlString! as URL)
+    }
+    
 
 }
 
