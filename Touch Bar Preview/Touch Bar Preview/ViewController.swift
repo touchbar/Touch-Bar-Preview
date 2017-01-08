@@ -30,11 +30,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet var dropDestinationView: DropDestinationView!
+    @IBOutlet weak var imagePreviewView: NSImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        dropDestinationView.delegate = self
     }
 
     override var representedObject: Any? {
@@ -43,6 +47,21 @@ class ViewController: NSViewController {
         }
     }
 
+}
 
+// MARK: - DropDestinationViewDelegate
+extension ViewController: DropDestinationViewDelegate {
+    
+    func processImageURLs(_ urls: [URL]) {
+        for (_,url) in urls.enumerated() {
+            
+            // create the image from the content URL
+            if let image = NSImage(contentsOf:url) {
+                
+                imagePreviewView.image = image
+            }
+        }
+    }
+    
 }
 

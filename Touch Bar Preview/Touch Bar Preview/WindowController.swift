@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  WindowController.swift
 //  Touch Bar Preview
 //
 //  This Software is released under the MIT License
@@ -29,31 +29,12 @@
 
 import Cocoa
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class WindowController: NSWindowController {
 
-
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
+    override func windowDidLoad() {
+        super.windowDidLoad()
     
-    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        // reopen the main window if you click on the dock icon
-        if let window = sender.windows.first {
-            if flag {
-                window.orderFront(nil)
-            } else {
-                window.makeKeyAndOrderFront(nil)
-            }
-        }
-        return true
+        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
-
 
 }
-
