@@ -73,12 +73,16 @@ extension ViewController: DropDestinationViewDelegate {
                 
                 // check if the image has the touch bar size (2170x60px)
                 // and inform the user
-                if image.size.width > 2170.0 || image.size.height > 60.0 {
+                if image.size.width > TouchBarSizes.fullWidth || image.size.height > TouchBarSizes.fullHeight {
                     bottomBarInfoLable.stringValue = "Image is too big! Should be 2170x60px."
-                    bottomBarInfoLable.toolTip = "The image is \(image.size.width)x\(image.size.height)px."
+                    bottomBarInfoLable.toolTip = "The image is \(Int(image.size.width))x\(Int(image.size.height))px."
                     
                     // show alert icon in bottom bar
                     bottomBarAlertImageWidth.constant = 20.0
+                    
+                } else if image.size.width == TouchBarSizes.fullWidth && image.size.height == TouchBarSizes.fullHeight {
+                    bottomBarInfoLable.stringValue = "✓ Image is correct!"
+                    bottomBarInfoLable.toolTip = nil
                     
                 } else {
                     bottomBarInfoLable.stringValue = "Image should be 2170x60px"

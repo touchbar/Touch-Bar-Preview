@@ -14,6 +14,7 @@
 		EB31EBF61E1BCDDF00DB1EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */; };
 		EB31EBF91E1BCDDF00DB1EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB31EBF71E1BCDDF00DB1EA2 /* Main.storyboard */; };
 		EB6250151E1E76C90012D721 /* DropDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6250141E1E76C90012D721 /* DropDestinationView.swift */; };
+		EB69F29D1E2C227200CDA342 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F29C1E2C227200CDA342 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EB31EBF81E1BCDDF00DB1EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6250141E1E76C90012D721 /* DropDestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDestinationView.swift; sourceTree = "<group>"; };
+		EB69F29C1E2C227200CDA342 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		EB14F60A1E2C156600EF5B6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB69F29C1E2C227200CDA342 /* Constants.swift */,
 				EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */,
 				EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */,
 				EB14F60B1E2C159E00EF5B6A /* Credits.rtf */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB69F29D1E2C227200CDA342 /* Constants.swift in Sources */,
 				EB31EBF41E1BCDDF00DB1EA2 /* ViewController.swift in Sources */,
 				EB0B03A61E22EA25002091D3 /* WindowController.swift in Sources */,
 				EB6250151E1E76C90012D721 /* DropDestinationView.swift in Sources */,
