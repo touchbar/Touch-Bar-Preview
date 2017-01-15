@@ -36,7 +36,8 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var bottomBarInfoLable: NSTextField!
     @IBOutlet weak var bottomBarAlertImageWidth: NSLayoutConstraint!
-    
+
+    public var windowDelegate: WindowController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +64,7 @@ extension ViewController: DropDestinationViewDelegate {
         for (_,url) in urls.enumerated() {
             
             // pass URL to Window Controller
-            let windowController = WindowController()
-            windowController.showImageInTouchBar(url)
+            windowDelegate?.showImageInTouchBar(url)
             
             // create the image from the content URL
             if let image = NSImage(contentsOf:url) {
