@@ -31,7 +31,6 @@ import Cocoa
 
 class WindowController: NSWindowController {
 
-    @IBOutlet weak var lable: NSTextField!
     @IBOutlet var touchBarImageView: NSImageView!
     
     override func windowDidLoad() {
@@ -48,11 +47,7 @@ class WindowController: NSWindowController {
     // MARK: - Touch Bar
     
     func showImageInTouchBar(_ url: URL) {
-        print(url)
-        
-        if touchBarImageView == nil {
-            print("touchBarImageView is nil")
-        }
+        //print(url)
         
         if let touchbarImage = NSImage(contentsOf:url) {
             touchBarImageView.image = touchbarImage
