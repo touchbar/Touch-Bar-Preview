@@ -15,6 +15,9 @@
 		EB31EBF91E1BCDDF00DB1EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB31EBF71E1BCDDF00DB1EA2 /* Main.storyboard */; };
 		EB6250151E1E76C90012D721 /* DropDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6250141E1E76C90012D721 /* DropDestinationView.swift */; };
 		EB69F29D1E2C227200CDA342 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F29C1E2C227200CDA342 /* Constants.swift */; };
+		EB69F2A31E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F2A21E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift */; };
+		EB69F2A51E2C305300CDA342 /* DownloadUIKitWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F2A41E2C305300CDA342 /* DownloadUIKitWindowController.swift */; };
+		EB69F2A71E2C370500CDA342 /* DownloadUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F2A61E2C370500CDA342 /* DownloadUIKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6250141E1E76C90012D721 /* DropDestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDestinationView.swift; sourceTree = "<group>"; };
 		EB69F29C1E2C227200CDA342 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EB69F2A21E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarAccessoryViewController.swift; sourceTree = "<group>"; };
+		EB69F2A41E2C305300CDA342 /* DownloadUIKitWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadUIKitWindowController.swift; sourceTree = "<group>"; };
+		EB69F2A61E2C370500CDA342 /* DownloadUIKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadUIKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 			isa = PBXGroup;
 			children = (
 				EB69F29C1E2C227200CDA342 /* Constants.swift */,
+				EB69F2A41E2C305300CDA342 /* DownloadUIKitWindowController.swift */,
+				EB69F2A61E2C370500CDA342 /* DownloadUIKitViewController.swift */,
+				EB69F2A21E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift */,
 				EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */,
 				EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */,
 				EB14F60B1E2C159E00EF5B6A /* Credits.rtf */,
@@ -154,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB69F29D1E2C227200CDA342 /* Constants.swift in Sources */,
+				EB69F2A31E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift in Sources */,
 				EB31EBF41E1BCDDF00DB1EA2 /* ViewController.swift in Sources */,
+				EB69F2A71E2C370500CDA342 /* DownloadUIKitViewController.swift in Sources */,
+				EB69F2A51E2C305300CDA342 /* DownloadUIKitWindowController.swift in Sources */,
 				EB0B03A61E22EA25002091D3 /* WindowController.swift in Sources */,
 				EB6250151E1E76C90012D721 /* DropDestinationView.swift in Sources */,
 				EB31EBF21E1BCDDF00DB1EA2 /* AppDelegate.swift in Sources */,
