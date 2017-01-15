@@ -190,9 +190,30 @@
                                     </textField>
                                 </viewController>
                             </touchBarItem>
+                            <touchBarItem id="GIk-9c-4AS">
+                                <viewController key="viewController" id="qRh-6c-BoC">
+                                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="02L-LN-Km0">
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="30"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aNu-zg-YdH">
+                                                <rect key="frame" x="0.0" y="0.0" width="640" height="30"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aNu-zg-YdH" secondAttribute="trailing" id="8vm-dH-VDy"/>
+                                            <constraint firstAttribute="bottom" secondItem="aNu-zg-YdH" secondAttribute="bottom" id="9xy-1G-LAO"/>
+                                            <constraint firstItem="aNu-zg-YdH" firstAttribute="top" secondItem="02L-LN-Km0" secondAttribute="top" id="AaV-Rg-7dz"/>
+                                            <constraint firstItem="aNu-zg-YdH" firstAttribute="leading" secondItem="02L-LN-Km0" secondAttribute="leading" id="ppR-9L-bhR"/>
+                                        </constraints>
+                                    </view>
+                                </viewController>
+                            </touchBarItem>
                         </touchBarItems>
                     </touchBar>
                     <connections>
+                        <outlet property="lable" destination="lYZ-py-9t9" id="Alh-UF-ebQ"/>
+                        <outlet property="touchBarImageView" destination="aNu-zg-YdH" id="0eJ-W4-DVF"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
