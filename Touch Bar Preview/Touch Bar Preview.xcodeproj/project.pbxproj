@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB0B03A61E22EA25002091D3 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B03A51E22EA25002091D3 /* WindowController.swift */; };
+		EB14F60C1E2C159E00EF5B6A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EB14F60B1E2C159E00EF5B6A /* Credits.rtf */; };
 		EB31EBF21E1BCDDF00DB1EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31EBF11E1BCDDF00DB1EA2 /* AppDelegate.swift */; };
 		EB31EBF41E1BCDDF00DB1EA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31EBF31E1BCDDF00DB1EA2 /* ViewController.swift */; };
 		EB31EBF61E1BCDDF00DB1EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		EB0B03A51E22EA25002091D3 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		EB14F60B1E2C159E00EF5B6A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		EB31EBEE1E1BCDDF00DB1EA2 /* Touch Bar Preview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Touch Bar Preview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB31EBF11E1BCDDF00DB1EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB31EBF31E1BCDDF00DB1EA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB14F60A1E2C156600EF5B6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */,
+				EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */,
+				EB14F60B1E2C159E00EF5B6A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EB31EBE51E1BCDDF00DB1EA2 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +72,8 @@
 				EB0B03A51E22EA25002091D3 /* WindowController.swift */,
 				EB31EBF31E1BCDDF00DB1EA2 /* ViewController.swift */,
 				EB6250141E1E76C90012D721 /* DropDestinationView.swift */,
-				EB31EBF51E1BCDDF00DB1EA2 /* Assets.xcassets */,
 				EB31EBF71E1BCDDF00DB1EA2 /* Main.storyboard */,
-				EB31EBFA1E1BCDDF00DB1EA2 /* Info.plist */,
+				EB14F60A1E2C156600EF5B6A /* Supporting Files */,
 			);
 			path = "Touch Bar Preview";
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB31EBF61E1BCDDF00DB1EA2 /* Assets.xcassets in Resources */,
+				EB14F60C1E2C159E00EF5B6A /* Credits.rtf in Resources */,
 				EB31EBF91E1BCDDF00DB1EA2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
