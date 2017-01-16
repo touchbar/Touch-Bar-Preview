@@ -73,7 +73,9 @@ extension ViewController: DropDestinationViewDelegate {
         for (_,url) in urls.enumerated() {
             
             // pass URL to Window Controller
-            windowDelegate?.showImageInTouchBar(url)
+            if #available(OSX 10.12.2, *) {
+                windowDelegate?.showImageInTouchBar(url)
+            }
             
             // create the image from the content URL
             if let image = NSImage(contentsOf:url) {

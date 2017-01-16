@@ -49,6 +49,7 @@ class WindowController: NSWindowController {
     
     // MARK: - Touch Bar
     
+    @available(OSX 10.12.2, *)
     func showImageInTouchBar(_ url: URL) {
         //print(url)
         
