@@ -212,7 +212,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Tf5-Zd-ZiC"/>
                                                     <constraint firstAttribute="width" constant="1085" id="vB7-KS-OHK"/>
                                                 </constraints>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="YAb-4k-5l2"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottomLeft" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -227,6 +227,7 @@
                         </touchBarItems>
                     </touchBar>
                     <connections>
+                        <outlet property="emptyLabel" destination="6hK-Ze-20m" id="Ca1-wd-awS"/>
                         <outlet property="imageViewSpaceConstraintLeft" destination="a7s-rG-2UB" id="TOa-Dk-Ml9"/>
                         <outlet property="imageViewWidthConstraint" destination="vB7-KS-OHK" id="n7w-cj-Kce"/>
                         <outlet property="touchBarImageView" destination="aNu-zg-YdH" id="0eJ-W4-DVF"/>

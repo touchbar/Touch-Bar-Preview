@@ -32,6 +32,7 @@ import Cocoa
 class WindowController: NSWindowController {
 
     @IBOutlet var touchBarImageView: NSImageView!
+    @IBOutlet weak var emptyLabel: NSTextField!
     
     @IBOutlet weak var imageViewSpaceConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
@@ -56,9 +57,11 @@ class WindowController: NSWindowController {
         if let touchbarImage = NSImage(contentsOf:url) {
             touchBarImageView.image = touchbarImage
             
-            if touchbarImage.size.width == TouchBarSizes.fullWidth {
+            if touchbarImage.size.width == TouchBarSizes.fullWidth || touchbarImage.size.width == TouchBarSizes.fullWidth/2 {
                 imageViewSpaceConstraintLeft.constant = -TouchBarSizes.systemButtonWidth-TouchBarSizes.regionSpace
             }
+            
+            emptyLabel.isHidden = true
         }
     }
     

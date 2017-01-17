@@ -81,6 +81,7 @@ extension ViewController: DropDestinationViewDelegate {
             if let image = NSImage(contentsOf:url) {
                 
                 imagePreviewView.image = image
+                //print(image.size.width)
                 
                 // check if the image has the touch bar size (2170x60px)
                 // and inform the user
@@ -91,9 +92,12 @@ extension ViewController: DropDestinationViewDelegate {
                     // show alert icon in bottom bar
                     bottomBarAlertImageWidth.constant = 20.0
                     
-                } else if image.size.width == TouchBarSizes.fullWidth && image.size.height == TouchBarSizes.fullHeight {
+                } else if image.size.width == TouchBarSizes.fullWidth && image.size.height == TouchBarSizes.fullHeight || image.size.width == TouchBarSizes.fullWidth/2 && image.size.height == TouchBarSizes.fullHeight/2 {
                     bottomBarInfoLable.stringValue = "✓ Image is correct!"
                     bottomBarInfoLable.toolTip = nil
+                    
+                    // "hide" alert icon in bottom bar
+                    bottomBarAlertImageWidth.constant = 0.0
                     
                 } else {
                     bottomBarInfoLable.stringValue = "Image should be 2170x60px"
