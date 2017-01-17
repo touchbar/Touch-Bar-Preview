@@ -27,6 +27,13 @@
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="WTf-7R-e64"/>
+                                        <menuItem title="Check For Updates…" id="NQ1-62-sOk">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="tMr-ty-EgY"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -138,6 +145,13 @@
                                                 <action selector="openWebsite:" target="Voe-Tx-rLC" id="4ty-uC-Fv5"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kma-cX-XFl"/>
+                                        <menuItem title="Request Feature or Report Problem" tag="2" id="k6r-4w-rhg">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openWebsite:" target="Voe-Tx-rLC" id="6m1-VO-JNM"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Ktw-1w-Zel"/>
                                         <menuItem title="Download Free UI Kit" tag="10" id="sa0-eI-VVa">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -148,7 +162,7 @@
                                         <menuItem isSeparatorItem="YES" id="ljQ-yi-30q"/>
                                         <menuItem title="Touch Bar Preview Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <action selector="openHelp:" target="Voe-Tx-rLC" id="hhI-88-sez"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -185,7 +199,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="685" height="30"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ze-20m" userLabel="Emtpy Label">
-                                                <rect key="frame" x="205.5" y="3" width="273" height="24"/>
+                                                <rect key="frame" x="206" y="3" width="273" height="24"/>
                                                 <textFieldCell key="cell" borderStyle="bezel" alignment="left" title="drag and drop an image to the window" drawsBackground="YES" id="d9a-ZP-IS3">
                                                     <font key="font" usesAppearanceFont="YES"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
