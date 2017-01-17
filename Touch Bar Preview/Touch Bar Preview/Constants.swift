@@ -1,5 +1,5 @@
 //
-//  WindowController.swift
+//  Constants.swift
 //  Touch Bar Preview
 //
 //  This Software is released under the MIT License
@@ -27,43 +27,14 @@
 //  For more information see: https://github.com/touchbar/Touch-Bar-Preview
 //
 
-import Cocoa
+import Foundation
 
-class WindowController: NSWindowController {
-
-    @IBOutlet var touchBarImageView: NSImageView!
-    @IBOutlet weak var emptyLabel: NSTextField!
+struct TouchBarSizes {
     
-    @IBOutlet weak var imageViewSpaceConstraintLeft: NSLayoutConstraint!
-    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
+    static let fullWidth: CGFloat = 2170.0
+    static let fullHeight: CGFloat = 60.0
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
-        if let ddvc: ViewController = self.window?.contentViewController as? ViewController {
-            ddvc.windowDelegate = self
-        }
-    }
-    
-    
-    // MARK: - Touch Bar
-    
-    @available(OSX 10.12.2, *)
-    func showImageInTouchBar(_ url: URL) {
-        //print(url)
-        
-        if let touchbarImage = NSImage(contentsOf:url) {
-            touchBarImageView.image = touchbarImage
-            
-            if touchbarImage.size.width == TouchBarSizes.fullWidth || touchbarImage.size.width == TouchBarSizes.fullWidth/2 {
-                imageViewSpaceConstraintLeft.constant = -TouchBarSizes.systemButtonWidth-TouchBarSizes.regionSpace
-            }
-            
-            emptyLabel.isHidden = true
-        }
-    }
-    
-
+    // non-retina pixels (@1x)
+    static let systemButtonWidth: CGFloat = 128.0/2
+    static let regionSpace: CGFloat = 32.0/2 // the space between system button and app region
 }

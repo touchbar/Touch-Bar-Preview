@@ -36,7 +36,8 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var bottomBarInfoLable: NSTextField!
     @IBOutlet weak var bottomBarAlertImageWidth: NSLayoutConstraint!
-    
+
+    public var windowDelegate: WindowController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,15 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    // Accessory view controller to hold the "Download UI Kit" button as part of the window's titlebar.
+    var titlebarAccessoryViewController : NSTitlebarAccessoryViewController!
+    
+    override func viewWillAppear() {
+        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: "titleBarAccessory") as! NSTitlebarAccessoryViewController!
+        titlebarAccessoryViewController.layoutAttribute = .right
+        self.view.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
+    }
 
 }
 
@@ -63,22 +73,31 @@ extension ViewController: DropDestinationViewDelegate {
         for (_,url) in urls.enumerated() {
             
             // pass URL to Window Controller
-            let windowController = WindowController()
-            windowController.showImageInTouchBar(url)
+            if #available(OSX 10.12.2, *) {
+                windowDelegate?.showImageInTouchBar(url)
+            }
             
             // create the image from the content URL
             if let image = NSImage(contentsOf:url) {
                 
                 imagePreviewView.image = image
+                //print(image.size.width)
                 
                 // check if the image has the touch bar size (2170x60px)
                 // and inform the user
-                if image.size.width > 2170.0 || image.size.height > 60.0 {
+                if image.size.width > TouchBarSizes.fullWidth || image.size.height > TouchBarSizes.fullHeight {
                     bottomBarInfoLable.stringValue = "Image is too big! Should be 2170x60px."
-                    bottomBarInfoLable.toolTip = "The image is \(image.size.width)x\(image.size.height)px."
+                    bottomBarInfoLable.toolTip = "The image is \(Int(image.size.width))x\(Int(image.size.height))px."
                     
                     // show alert icon in bottom bar
                     bottomBarAlertImageWidth.constant = 20.0
+                    
+                } else if image.size.width == TouchBarSizes.fullWidth && image.size.height == TouchBarSizes.fullHeight || image.size.width == TouchBarSizes.fullWidth/2 && image.size.height == TouchBarSizes.fullHeight/2 {
+                    bottomBarInfoLable.stringValue = "✓ Image is correct!"
+                    bottomBarInfoLable.toolTip = nil
+                    
+                    // "hide" alert icon in bottom bar
+                    bottomBarAlertImageWidth.constant = 0.0
                     
                 } else {
                     bottomBarInfoLable.stringValue = "Image should be 2170x60px"

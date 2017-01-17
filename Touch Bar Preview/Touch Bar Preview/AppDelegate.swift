@@ -56,6 +56,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Menu Links
     
+    @IBAction func checkForUpdates(_ sender: NSMenuItem) {
+        let alert = showUpdateAlert()
+        
+        if alert == true {
+            let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/releases/latest")
+            NSWorkspace.shared().open(urlString! as URL)
+        }
+    }
+    
+    func showUpdateAlert() -> Bool {
+        let updateAlert: NSAlert = NSAlert()
+        updateAlert.messageText = "Updating Touch Bar Preview"
+        updateAlert.informativeText = "You've installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
+        updateAlert.alertStyle = NSAlertStyle.warning
+        updateAlert.addButton(withTitle: "Check Now")
+        updateAlert.addButton(withTitle: "Later")
+        return updateAlert.runModal() == NSAlertFirstButtonReturn
+    }
+    
     @IBAction func openWebsite(_ sender: NSMenuItem) {
         var urlString = NSURL(string: "")
         
@@ -64,6 +83,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             urlString = NSURL(string: "https://touchbar.github.io")
         case 1:
             urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview")
+        case 2:
+            urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/issues")
         case 10:
             urlString = NSURL(string: "https://github.com/alexkaessner/macOS-UI-Kit")
         default:
@@ -73,6 +94,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared().open(urlString! as URL)
     }
     
+    @IBAction func openHelp(_ sender: NSMenuItem) {
+        let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/wiki")
+        NSWorkspace.shared().open(urlString! as URL)
+    }
 
 }
 

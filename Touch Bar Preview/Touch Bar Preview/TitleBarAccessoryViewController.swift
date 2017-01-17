@@ -1,5 +1,5 @@
 //
-//  WindowController.swift
+//  TitleBarAccessoryViewController.swift
 //  Touch Bar Preview
 //
 //  This Software is released under the MIT License
@@ -29,41 +29,11 @@
 
 import Cocoa
 
-class WindowController: NSWindowController {
+class TitleBarAccessoryViewController: NSTitlebarAccessoryViewController {
 
-    @IBOutlet var touchBarImageView: NSImageView!
-    @IBOutlet weak var emptyLabel: NSTextField!
-    
-    @IBOutlet weak var imageViewSpaceConstraintLeft: NSLayoutConstraint!
-    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
-    
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
-        if let ddvc: ViewController = self.window?.contentViewController as? ViewController {
-            ddvc.windowDelegate = self
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
     }
     
-    
-    // MARK: - Touch Bar
-    
-    @available(OSX 10.12.2, *)
-    func showImageInTouchBar(_ url: URL) {
-        //print(url)
-        
-        if let touchbarImage = NSImage(contentsOf:url) {
-            touchBarImageView.image = touchbarImage
-            
-            if touchbarImage.size.width == TouchBarSizes.fullWidth || touchbarImage.size.width == TouchBarSizes.fullWidth/2 {
-                imageViewSpaceConstraintLeft.constant = -TouchBarSizes.systemButtonWidth-TouchBarSizes.regionSpace
-            }
-            
-            emptyLabel.isHidden = true
-        }
-    }
-    
-
 }
