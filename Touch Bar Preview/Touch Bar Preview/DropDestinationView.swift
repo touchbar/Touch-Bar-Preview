@@ -69,6 +69,7 @@ class DropDestinationView: NSView {
             path.stroke()
             
             dropIconView.alphaValue = Appearance.dropImageAlphaHover
+            dropIconView.unregisterDraggedTypes()
         }
     }
     
