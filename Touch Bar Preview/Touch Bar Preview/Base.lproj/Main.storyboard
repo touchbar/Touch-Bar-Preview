@@ -112,6 +112,12 @@
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="XQB-5p-Lfr"/>
+                                        <menuItem title="Main Window" keyEquivalent="0" id="hec-QT-Cft">
+                                            <connections>
+                                                <action selector="showMainWindow:" target="Voe-Tx-rLC" id="gDo-cj-GHF"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>

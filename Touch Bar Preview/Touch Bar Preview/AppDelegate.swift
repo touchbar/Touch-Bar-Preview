@@ -56,6 +56,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Menu Links
     
+    @IBAction func showMainWindow(_ sender: Any) {
+        NSApplication.shared.windows.first?.makeKeyAndOrderFront(self)
+    }
+    
     @IBAction func checkForUpdates(_ sender: NSMenuItem) {
         let alert = showUpdateAlert()
         
