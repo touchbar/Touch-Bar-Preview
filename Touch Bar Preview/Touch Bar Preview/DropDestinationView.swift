@@ -78,15 +78,15 @@ class DropDestinationView: NSView {
     
     
     // define the supported types -> URL
-    var acceptableTypes: Set<String> { return [NSURLPboardType] }
+    //var acceptableTypes: Set<String> { return [NSPasteboard.PasteboardType(kUTTypeURL as String).rawValue] }
     
     func setup() {
-        register(forDraggedTypes: Array(acceptableTypes))
+        self.registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeURL as String)])
     }
     
     
     // define URL types -> images
-    let filteringOptions = [NSPasteboardURLReadingContentsConformToTypesKey:NSImage.imageTypes()]
+    let filteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes:NSImage.imageTypes]
     
     func shouldAllowDrag(_ draggingInfo: NSDraggingInfo) -> Bool {
         

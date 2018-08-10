@@ -36,7 +36,7 @@ class DownloadUIKitWindowController: NSWindowController {
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         super.window?.backgroundColor = NSColor.white
-        super.window?.titleVisibility = NSWindowTitleVisibility.hidden;
+        super.window?.titleVisibility = NSWindow.TitleVisibility.hidden;
         super.window?.titlebarAppearsTransparent = true
         super.window?.isMovableByWindowBackground  = true
     }

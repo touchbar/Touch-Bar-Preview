@@ -59,7 +59,7 @@ class ViewController: NSViewController {
     var titlebarAccessoryViewController : NSTitlebarAccessoryViewController!
     
     override func viewWillAppear() {
-        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: "titleBarAccessory") as! NSTitlebarAccessoryViewController!
+        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titleBarAccessory")) as! NSTitlebarAccessoryViewController
         titlebarAccessoryViewController.layoutAttribute = .right
         self.view.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
     }

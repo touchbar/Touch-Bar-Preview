@@ -61,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if alert == true {
             let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/releases/latest")
-            NSWorkspace.shared().open(urlString! as URL)
+            NSWorkspace.shared.open(urlString! as URL)
         }
     }
     
@@ -69,10 +69,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let updateAlert: NSAlert = NSAlert()
         updateAlert.messageText = "Updating Touch Bar Preview"
         updateAlert.informativeText = "You've installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
-        updateAlert.alertStyle = NSAlertStyle.warning
+        updateAlert.alertStyle = NSAlert.Style.warning
         updateAlert.addButton(withTitle: "Check Now")
         updateAlert.addButton(withTitle: "Later")
-        return updateAlert.runModal() == NSAlertFirstButtonReturn
+        return updateAlert.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
     }
     
     @IBAction func openWebsite(_ sender: NSMenuItem) {
@@ -91,12 +91,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        NSWorkspace.shared().open(urlString! as URL)
+        NSWorkspace.shared.open(urlString! as URL)
     }
     
     @IBAction func openHelp(_ sender: NSMenuItem) {
         let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/wiki")
-        NSWorkspace.shared().open(urlString! as URL)
+        NSWorkspace.shared.open(urlString! as URL)
     }
 
 }
