@@ -34,6 +34,7 @@
 		EB69F2A21E2C2E4400CDA342 /* TitleBarAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarAccessoryViewController.swift; sourceTree = "<group>"; };
 		EB69F2A41E2C305300CDA342 /* DownloadUIKitWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadUIKitWindowController.swift; sourceTree = "<group>"; };
 		EB69F2A61E2C370500CDA342 /* DownloadUIKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadUIKitViewController.swift; sourceTree = "<group>"; };
+		EB9A69AB211D944C0054689F /* Touch Bar Preview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Touch Bar Preview.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		EB31EBF01E1BCDDF00DB1EA2 /* Touch Bar Preview */ = {
 			isa = PBXGroup;
 			children = (
+				EB9A69AB211D944C0054689F /* Touch Bar Preview.entitlements */,
 				EB31EBF11E1BCDDF00DB1EA2 /* AppDelegate.swift */,
 				EB0B03A51E22EA25002091D3 /* WindowController.swift */,
 				EB31EBF31E1BCDDF00DB1EA2 /* ViewController.swift */,
@@ -124,6 +126,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -298,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Touch Bar Preview/Touch Bar Preview.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Touch Bar Preview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -311,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Touch Bar Preview/Touch Bar Preview.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Touch Bar Preview/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
