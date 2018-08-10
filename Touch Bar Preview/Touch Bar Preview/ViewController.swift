@@ -54,15 +54,6 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    
-    // Accessory view controller to hold the "Download UI Kit" button as part of the window's titlebar.
-    var titlebarAccessoryViewController : NSTitlebarAccessoryViewController!
-    
-    override func viewWillAppear() {
-        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titleBarAccessory")) as! NSTitlebarAccessoryViewController
-        titlebarAccessoryViewController.layoutAttribute = .right
-        self.view.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
-    }
 
 }
 

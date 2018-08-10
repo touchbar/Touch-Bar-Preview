@@ -37,6 +37,8 @@ class WindowController: NSWindowController {
     @IBOutlet weak var imageViewSpaceConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
     
+    var titlebarAccessoryViewController : NSTitlebarAccessoryViewController!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
     
@@ -45,6 +47,11 @@ class WindowController: NSWindowController {
         if let ddvc: ViewController = self.window?.contentViewController as? ViewController {
             ddvc.windowDelegate = self
         }
+        
+        // Accessory view controller to hold the "Download UI Kit" button as part of the window's titlebar.
+        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titleBarAccessory")) as! NSTitlebarAccessoryViewController
+        titlebarAccessoryViewController.layoutAttribute = .right
+        self.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
     }
     
     
