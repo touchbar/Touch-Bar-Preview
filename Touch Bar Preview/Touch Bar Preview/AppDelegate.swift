@@ -53,26 +53,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return true
     }
+    
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        
+        NotificationCenter.default.post(name: Notification.Name("dropFileOnDock"), object: filename)
+        
+        return true
+    }
 
     // MARK: - Menu Links
+    
+    @IBAction func showMainWindow(_ sender: Any) {
+        NSApplication.shared.windows.first?.makeKeyAndOrderFront(self)
+    }
     
     @IBAction func checkForUpdates(_ sender: NSMenuItem) {
         let alert = showUpdateAlert()
         
         if alert == true {
             let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/releases/latest")
-            NSWorkspace.shared().open(urlString! as URL)
+            NSWorkspace.shared.open(urlString! as URL)
         }
     }
     
     func showUpdateAlert() -> Bool {
         let updateAlert: NSAlert = NSAlert()
         updateAlert.messageText = "Updating Touch Bar Preview"
-        updateAlert.informativeText = "You've installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
-        updateAlert.alertStyle = NSAlertStyle.warning
+        updateAlert.informativeText = "You’ve installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
+        updateAlert.alertStyle = NSAlert.Style.warning
         updateAlert.addButton(withTitle: "Check Now")
         updateAlert.addButton(withTitle: "Later")
-        return updateAlert.runModal() == NSAlertFirstButtonReturn
+        return updateAlert.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
     }
     
     @IBAction func openWebsite(_ sender: NSMenuItem) {
@@ -91,12 +102,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        NSWorkspace.shared().open(urlString! as URL)
+        NSWorkspace.shared.open(urlString! as URL)
     }
     
     @IBAction func openHelp(_ sender: NSMenuItem) {
         let urlString = NSURL(string: "https://github.com/touchbar/Touch-Bar-Preview/wiki")
-        NSWorkspace.shared().open(urlString! as URL)
+        NSWorkspace.shared.open(urlString! as URL)
     }
 
 }

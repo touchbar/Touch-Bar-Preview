@@ -38,6 +38,6 @@ class DownloadUIKitViewController: NSViewController {
     
     @IBAction func downloadUIKit(_ sender: NSButton) {
         let urlString = NSURL(string: "https://github.com/alexkaessner/macOS-UI-Kit")
-        NSWorkspace.shared().open(urlString! as URL)
+        NSWorkspace.shared.open(urlString! as URL)
     }
 }

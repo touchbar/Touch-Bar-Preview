@@ -47,6 +47,8 @@ class ViewController: NSViewController {
         
         // "hide" alert icon in bottom bar
         bottomBarAlertImageWidth.constant = 0.0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDockIconDrop), name: NSNotification.Name("dropFileOnDock"), object: nil)
     }
 
     override var representedObject: Any? {
@@ -55,13 +57,20 @@ class ViewController: NSViewController {
         }
     }
     
-    // Accessory view controller to hold the "Download UI Kit" button as part of the window's titlebar.
-    var titlebarAccessoryViewController : NSTitlebarAccessoryViewController!
-    
-    override func viewWillAppear() {
-        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: "titleBarAccessory") as! NSTitlebarAccessoryViewController!
-        titlebarAccessoryViewController.layoutAttribute = .right
-        self.view.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
+    @objc func handleDockIconDrop(notification: Notification) {
+        
+        let fileName = notification.object as! String
+        let urlString = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
+        let url = URL(string: "file://\(urlString)")
+        
+        if (url != nil) {
+            processImageURLs([url!])
+            
+            // hide the drag and drop icon
+            NotificationCenter.default.post(name: NSNotification.Name("hideDragAndDropIcon"), object: nil)
+        }else {
+            print("could not import image from icon drag")
+        }
     }
 
 }
@@ -86,7 +95,7 @@ extension ViewController: DropDestinationViewDelegate {
                 // check if the image has the touch bar size (2170x60px)
                 // and inform the user
                 if image.size.width > TouchBarSizes.fullWidth || image.size.height > TouchBarSizes.fullHeight {
-                    bottomBarInfoLable.stringValue = "Image is too big! Should be 2170x60px."
+                    bottomBarInfoLable.stringValue = "Image is too big! Should be 2170×60px."
                     bottomBarInfoLable.toolTip = "The image is \(Int(image.size.width))x\(Int(image.size.height))px."
                     
                     // show alert icon in bottom bar
@@ -100,7 +109,7 @@ extension ViewController: DropDestinationViewDelegate {
                     bottomBarAlertImageWidth.constant = 0.0
                     
                 } else {
-                    bottomBarInfoLable.stringValue = "Image should be 2170x60px"
+                    bottomBarInfoLable.stringValue = "Image should be 2170×60px"
                     bottomBarInfoLable.toolTip = nil
                     
                     // "hide" alert icon in bottom bar

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="7104"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14215.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
-        <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.1" requiredIntegratedClassName="NSTouchBar"/>
+        <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -112,6 +111,12 @@
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="XQB-5p-Lfr"/>
+                                        <menuItem title="Main Window" keyEquivalent="0" id="hec-QT-Cft">
+                                            <connections>
+                                                <action selector="showMainWindow:" target="Voe-Tx-rLC" id="gDo-cj-GHF"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -183,13 +188,16 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="mainWindow" showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Touch Bar Preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="mainWindow" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                    <window key="window" title="Touch Bar Preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <value key="minSize" type="size" width="200" height="150"/>
                         <contentBorderThickness minY="32"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="jAN-6m-ZA1"/>
+                        </connections>
                     </window>
                     <touchBar key="touchBar" id="6e2-RT-gUW">
                         <touchBarItems>
@@ -198,7 +206,7 @@
                                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="02L-LN-Km0">
                                         <rect key="frame" x="0.0" y="0.0" width="685" height="30"/>
                                         <subviews>
-                                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ze-20m" userLabel="Emtpy Label">
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ze-20m" userLabel="Emtpy Label">
                                                 <rect key="frame" x="206" y="3" width="273" height="24"/>
                                                 <textFieldCell key="cell" borderStyle="bezel" alignment="left" title="drag and drop an image to the window" drawsBackground="YES" id="d9a-ZP-IS3">
                                                     <font key="font" usesAppearanceFont="YES"/>
@@ -212,7 +220,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Tf5-Zd-ZiC"/>
                                                     <constraint firstAttribute="width" constant="1085" id="vB7-KS-OHK"/>
                                                 </constraints>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottomLeft" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -242,12 +250,15 @@
         <scene sceneID="zSC-Ht-8vs">
             <objects>
                 <windowController storyboardIdentifier="downloadWindow" showSeguePresentationStyle="single" id="tPH-5f-XKb" customClass="DownloadUIKitWindowController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Download UI Kit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="aHM-bt-x1n">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" unifiedTitleAndToolbar="YES"/>
+                    <window key="window" title="Download UI Kit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="aHM-bt-x1n">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="600" height="507"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                        <connections>
+                            <outlet property="delegate" destination="tPH-5f-XKb" id="310-dw-9fD"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="ZfX-Lw-Mtk" kind="relationship" relationship="window.shadowedContentViewController" id="L6B-Iz-T5Z"/>
@@ -262,14 +273,14 @@
             <objects>
                 <viewController storyboardIdentifier="titleBarAccessory" id="hN7-fS-Fzw" customClass="TitleBarAccessoryViewController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="iQg-4k-0Hj">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="22"/>
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-ny-UsZ">
-                                <rect key="frame" x="4" y="3" width="82" height="16"/>
+                                <rect key="frame" x="3.5" y="3" width="97" height="16"/>
                                 <buttonCell key="cell" type="roundTextured" title="Touch Bar UI Kit" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="83l-jS-fQj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                                 <connections>
                                     <segue destination="tPH-5f-XKb" kind="show" id="Vb2-mj-AmB"/>
@@ -278,6 +289,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="e4S-ny-UsZ" secondAttribute="trailing" constant="4" id="SKF-wc-uDs"/>
+                            <constraint firstItem="e4S-ny-UsZ" firstAttribute="leading" secondItem="iQg-4k-0Hj" secondAttribute="leading" constant="4" id="pXk-vK-aMR"/>
                             <constraint firstItem="e4S-ny-UsZ" firstAttribute="centerY" secondItem="iQg-4k-0Hj" secondAttribute="centerY" id="yPZ-aR-86B"/>
                         </constraints>
                     </view>
@@ -290,25 +302,24 @@
         <scene sceneID="Lhd-er-Rb7">
             <objects>
                 <viewController id="ZfX-Lw-Mtk" customClass="DownloadUIKitViewController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="G4I-v6-7R7">
+                    <view key="view" appearanceType="aqua" id="G4I-v6-7R7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-xs-0lP">
-                                <rect key="frame" x="128" y="431" width="344" height="36"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-xs-0lP">
+                                <rect key="frame" x="133" y="431" width="335" height="36"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="macOS &amp; Touch Bar UI Kit" id="zL4-O8-e3h">
                                     <font key="font" metaFont="systemLight" size="30"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="yTX-h5-Smf">
-                                <rect key="frame" x="115" y="389" width="370" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="366" id="8ZL-uQ-MXG"/>
-                                </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Download the free UI Kit for Sketch, including a vector MacBook Pro with Touch Bar, Symbols and a Craft Library." id="qDg-ai-xA8">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTX-h5-Smf">
+                                <rect key="frame" x="120" y="389" width="360" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="qDg-ai-xA8">
                                     <font key="font" metaFont="system"/>
+                                    <string key="title">Download the free UI Kit for Sketch, including a vector
+MacBook Pro with Touch Bar, Symbols and a Craft Library.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -370,6 +381,7 @@
                                             <constraint firstAttribute="height" constant="104" id="D49-jF-5Yw"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Drop Image" id="g1T-lc-hEj"/>
+                                        <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -377,15 +389,15 @@
                                     <constraint firstItem="5Ir-lx-pbs" firstAttribute="centerX" secondItem="Bhq-fs-c55" secondAttribute="centerX" id="AWz-Mq-NC4"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="dropIconView" destination="5Ir-lx-pbs" id="Ii1-YF-fW7"/>
+                                    <outlet property="dropIconView" destination="5Ir-lx-pbs" id="jJP-g2-eaP"/>
                                 </connections>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SjC-ae-fzs" userLabel="Bottom Window Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If8-xj-QtX">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="If8-xj-QtX">
                                         <rect key="frame" x="26" y="9" width="448" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image should be 2170x60px" usesSingleLineMode="YES" id="T8F-z9-hpv">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image should be 2170×60px" usesSingleLineMode="YES" id="T8F-z9-hpv">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -440,7 +452,7 @@
     </scenes>
     <resources>
         <image name="Drop Image" width="104" height="104"/>
-        <image name="NSCaution" width="32" height="32"/>
+        <image name="NSCaution" width="128" height="128"/>
         <image name="Teaser Image" width="600" height="318"/>
     </resources>
 </document>

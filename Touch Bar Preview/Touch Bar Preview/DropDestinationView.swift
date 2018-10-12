@@ -78,15 +78,17 @@ class DropDestinationView: NSView {
     
     
     // define the supported types -> URL
-    var acceptableTypes: Set<String> { return [NSURLPboardType] }
+    //var acceptableTypes: Set<String> { return [NSPasteboard.PasteboardType(kUTTypeURL as String).rawValue] }
     
     func setup() {
-        register(forDraggedTypes: Array(acceptableTypes))
+        self.registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeURL as String)])
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(hideDragAndDropIcon), name: NSNotification.Name("hideDragAndDropIcon"), object: nil)
     }
     
     
     // define URL types -> images
-    let filteringOptions = [NSPasteboardURLReadingContentsConformToTypesKey:NSImage.imageTypes()]
+    let filteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes:NSImage.imageTypes]
     
     func shouldAllowDrag(_ draggingInfo: NSDraggingInfo) -> Bool {
         
@@ -144,7 +146,7 @@ class DropDestinationView: NSView {
         isReceivingDrag = false
         
         // hide the drop icon as we don't need this anymore
-        dropIconView.isHidden = true
+        hideDragAndDropIcon()
         
         let pasteBoard = draggingInfo.draggingPasteboard()
         
@@ -155,6 +157,10 @@ class DropDestinationView: NSView {
         }
         return false
         
+    }
+    
+    @objc func hideDragAndDropIcon() {
+        dropIconView.isHidden = true
     }
     
 }
