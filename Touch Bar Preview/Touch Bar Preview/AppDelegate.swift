@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func showUpdateAlert() -> Bool {
         let updateAlert: NSAlert = NSAlert()
         updateAlert.messageText = "Updating Touch Bar Preview"
-        updateAlert.informativeText = "You've installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
+        updateAlert.informativeText = "You’ve installed version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (\(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)). Please check manually for newer versions."
         updateAlert.alertStyle = NSAlert.Style.warning
         updateAlert.addButton(withTitle: "Check Now")
         updateAlert.addButton(withTitle: "Later")
