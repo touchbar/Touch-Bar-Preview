@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14019"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14215.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
         <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <scenes>
@@ -189,7 +188,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="mainWindow" showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Touch Bar Preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="mainWindow" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                    <window key="window" title="Touch Bar Preview" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -251,7 +250,7 @@
         <scene sceneID="zSC-Ht-8vs">
             <objects>
                 <windowController storyboardIdentifier="downloadWindow" showSeguePresentationStyle="single" id="tPH-5f-XKb" customClass="DownloadUIKitWindowController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Download UI Kit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="aHM-bt-x1n">
+                    <window key="window" title="Download UI Kit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="aHM-bt-x1n">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -274,14 +273,14 @@
             <objects>
                 <viewController storyboardIdentifier="titleBarAccessory" id="hN7-fS-Fzw" customClass="TitleBarAccessoryViewController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="iQg-4k-0Hj">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="22"/>
+                        <rect key="frame" x="0.0" y="0.0" width="104" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-ny-UsZ">
-                                <rect key="frame" x="4" y="3" width="82" height="16"/>
+                                <rect key="frame" x="3.5" y="3" width="97" height="16"/>
                                 <buttonCell key="cell" type="roundTextured" title="Touch Bar UI Kit" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="83l-jS-fQj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                                 <connections>
                                     <segue destination="tPH-5f-XKb" kind="show" id="Vb2-mj-AmB"/>
@@ -303,7 +302,7 @@
         <scene sceneID="Lhd-er-Rb7">
             <objects>
                 <viewController id="ZfX-Lw-Mtk" customClass="DownloadUIKitViewController" customModule="Touch_Bar_Preview" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="G4I-v6-7R7">
+                    <view key="view" appearanceType="aqua" id="G4I-v6-7R7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -453,7 +452,7 @@
     </scenes>
     <resources>
         <image name="Drop Image" width="104" height="104"/>
-        <image name="NSCaution" width="32" height="32"/>
+        <image name="NSCaution" width="128" height="128"/>
         <image name="Teaser Image" width="600" height="318"/>
     </resources>
 </document>
