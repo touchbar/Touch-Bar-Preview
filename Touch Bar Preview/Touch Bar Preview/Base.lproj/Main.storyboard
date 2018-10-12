@@ -192,7 +192,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <value key="minSize" type="size" width="200" height="150"/>
                         <contentBorderThickness minY="32"/>
                         <connections>
@@ -220,7 +220,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="Tf5-Zd-ZiC"/>
                                                     <constraint firstAttribute="width" constant="1085" id="vB7-KS-OHK"/>
                                                 </constraints>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottomLeft" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YAb-4k-5l2"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
