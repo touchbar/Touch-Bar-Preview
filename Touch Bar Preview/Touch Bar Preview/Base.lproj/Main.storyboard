@@ -389,7 +389,7 @@
                                     <constraint firstItem="5Ir-lx-pbs" firstAttribute="centerX" secondItem="Bhq-fs-c55" secondAttribute="centerX" id="AWz-Mq-NC4"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="dropIconView" destination="5Ir-lx-pbs" id="Ii1-YF-fW7"/>
+                                    <outlet property="dropIconView" destination="5Ir-lx-pbs" id="jJP-g2-eaP"/>
                                 </connections>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SjC-ae-fzs" userLabel="Bottom Window Bar">
@@ -442,6 +442,7 @@
                         <outlet property="bottomBarAlertImageWidth" destination="7C4-oz-oBo" id="iSa-eg-Kfr"/>
                         <outlet property="bottomBarInfoLable" destination="If8-xj-QtX" id="2hI-Hy-arD"/>
                         <outlet property="dropDestinationView" destination="Bhq-fs-c55" id="TNP-Ar-82b"/>
+                        <outlet property="dropIconView" destination="5Ir-lx-pbs" id="zBP-g6-SOt"/>
                         <outlet property="imagePreviewView" destination="b3k-xi-eRB" id="STQ-cU-HTl"/>
                     </connections>
                 </viewController>

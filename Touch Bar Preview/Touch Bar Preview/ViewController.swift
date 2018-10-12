@@ -47,11 +47,29 @@ class ViewController: NSViewController {
         
         // "hide" alert icon in bottom bar
         bottomBarAlertImageWidth.constant = 0.0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDockIconDrop), name: NSNotification.Name("dropFileOnDock"), object: nil)
     }
 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
+        }
+    }
+    
+    @objc func handleDockIconDrop(notification: Notification) {
+        
+        let fileName = notification.object as! String
+        let urlString = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
+        let url = URL(string: "file://\(urlString)")
+        
+        if (url != nil) {
+            processImageURLs([url!])
+            
+            // hide the drag and drop icon
+            NotificationCenter.default.post(name: NSNotification.Name("hideDragAndDropIcon"), object: nil)
+        }else {
+            print("could not import image from icon drag")
         }
     }
 

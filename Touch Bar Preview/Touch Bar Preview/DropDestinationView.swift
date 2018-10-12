@@ -82,6 +82,8 @@ class DropDestinationView: NSView {
     
     func setup() {
         self.registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeURL as String)])
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(hideDragAndDropIcon), name: NSNotification.Name("hideDragAndDropIcon"), object: nil)
     }
     
     
@@ -144,7 +146,7 @@ class DropDestinationView: NSView {
         isReceivingDrag = false
         
         // hide the drop icon as we don't need this anymore
-        dropIconView.isHidden = true
+        hideDragAndDropIcon()
         
         let pasteBoard = draggingInfo.draggingPasteboard()
         
@@ -155,6 +157,10 @@ class DropDestinationView: NSView {
         }
         return false
         
+    }
+    
+    @objc func hideDragAndDropIcon() {
+        dropIconView.isHidden = true
     }
     
 }

@@ -53,6 +53,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return true
     }
+    
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        
+        NotificationCenter.default.post(name: Notification.Name("dropFileOnDock"), object: filename)
+        
+        return true
+    }
 
     // MARK: - Menu Links
     
