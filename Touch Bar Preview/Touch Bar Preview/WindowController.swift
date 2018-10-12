@@ -49,7 +49,7 @@ class WindowController: NSWindowController {
         }
         
         // Accessory view controller to hold the "Download UI Kit" button as part of the window's titlebar.
-        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titleBarAccessory")) as! NSTitlebarAccessoryViewController
+        titlebarAccessoryViewController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titleBarAccessory")) as? NSTitlebarAccessoryViewController
         titlebarAccessoryViewController.layoutAttribute = .right
         self.window?.addTitlebarAccessoryViewController(self.titlebarAccessoryViewController)
     }
