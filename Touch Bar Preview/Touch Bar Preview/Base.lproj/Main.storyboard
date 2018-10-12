@@ -315,12 +315,11 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yTX-h5-Smf">
-                                <rect key="frame" x="115" y="389" width="370" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="366" id="8ZL-uQ-MXG"/>
-                                </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Download the free UI Kit for Sketch, including a vector MacBook Pro with Touch Bar, Symbols and a Craft Library." id="qDg-ai-xA8">
+                                <rect key="frame" x="120" y="389" width="360" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="qDg-ai-xA8">
                                     <font key="font" metaFont="system"/>
+                                    <string key="title">Download the free UI Kit for Sketch, including a vector
+MacBook Pro with Touch Bar, Symbols and a Craft Library.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
