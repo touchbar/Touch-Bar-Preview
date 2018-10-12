@@ -442,7 +442,6 @@ MacBook Pro with Touch Bar, Symbols and a Craft Library.</string>
                         <outlet property="bottomBarAlertImageWidth" destination="7C4-oz-oBo" id="iSa-eg-Kfr"/>
                         <outlet property="bottomBarInfoLable" destination="If8-xj-QtX" id="2hI-Hy-arD"/>
                         <outlet property="dropDestinationView" destination="Bhq-fs-c55" id="TNP-Ar-82b"/>
-                        <outlet property="dropIconView" destination="5Ir-lx-pbs" id="zBP-g6-SOt"/>
                         <outlet property="imagePreviewView" destination="b3k-xi-eRB" id="STQ-cU-HTl"/>
                     </connections>
                 </viewController>
