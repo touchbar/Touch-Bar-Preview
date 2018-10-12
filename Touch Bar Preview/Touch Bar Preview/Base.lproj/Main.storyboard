@@ -382,6 +382,7 @@
                                             <constraint firstAttribute="height" constant="104" id="D49-jF-5Yw"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Drop Image" id="g1T-lc-hEj"/>
+                                        <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
