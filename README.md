@@ -13,8 +13,12 @@ A small open source app to display your designs on the Touch Bar of the new MacB
 **To use Touch Bar Preview just drag and drop a image file (PNG, JPEG) into the app.**
 The image should be 2170px wide and 60px high. Since the Touch Bar is a high-resolution Retina display, this is equivalent to 1085pt by 30pt.
 
-The app automatically cuts out the System button (esc) and Control Strip so you **don't** have to exclude them in your design!
+The app automatically overlaps the System button (esc) and Control Strip on top of your design. So you don't have to exclude them in your design! Your design will get the required offset to be perfectly aligned.
 If your image is bigger or smaller than the required size, the image is currently stretched to fit into the app region.
+
+### Why is it not possible to hide the ESC and System Buttons on the right side?
+As Apple states in the [developer documentation](https://developer.apple.com/documentation/appkit/nstouchbar) of the Touch Bar:
+>On the right side of the Touch Bar, the system supplies the always-available *Control Strip*. The Control Strip gives the user access to standard controls for display brightness, sound volume, Siri, and so on. Your app’s bars appear to the left of the Control Strip. The user can choose to hide the Control Strip, which gives the frontmost app the entire Touch Bar width.
 
 Read more about the Touch Bar in the [Apple HIG](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/OSXHIGuidelines/AbouttheTouchBar.html#//apple_ref/doc/uid/20000957-CH104-SW1).
 
